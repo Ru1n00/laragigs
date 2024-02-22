@@ -22,3 +22,6 @@ Route::get('/hello', function () {
         ->header('Content-Type', 'text/plain');
 });
 
+Route::get('/posts/{id}', function ($id) {
+    return response("You are looking at post {$id}");
+})->where('id', '[0-9]+');
