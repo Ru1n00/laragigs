@@ -18,9 +18,15 @@ use App\Models\Listing;
 Route::get('/', function () {
     return view('listings', [
         "heading" => "Latest listings",
-        "posts" => Listing::all()
+        "listings" => Listing::all()
     ]);
 });
+
+Route::get('/listings/{id}', function ($id) {
+    return view('listing', [
+        "listing" => Listing::find($id)
+    ]);
+})->where('id', '[0-9]+');
 
 Route::get('/hello', function () {
     return response('<h1>Hello World</h1>')
