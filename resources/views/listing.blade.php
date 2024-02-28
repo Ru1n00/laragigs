@@ -1,6 +1,8 @@
 @extends('layout')
-
 @section('content')
+    <!-- Search -->
+    @include('partials._search')
+    
     @if ($listing)
         {{ $listing['id'] }}
         {{ $listing['title'] }}
