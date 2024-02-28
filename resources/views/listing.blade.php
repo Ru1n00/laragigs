@@ -1,4 +1,4 @@
-@if (count($listing) > 0)
+@if ($listing)
     {{ $listing['id'] }}
     {{ $listing['title'] }}
     {{ $listing['content'] }}
